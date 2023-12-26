@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Abdulgaffoor.Project]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Zoho(failed)">
+    <classes>
+      <class name="testcase.DemoScript">
+        <methods>
+          <include name="setUp"/>
+          <include name="LoginTest" invocation-numbers="0 1 2"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- testcase.DemoScript -->
+    </classes>
+  </test> <!-- Zoho(failed) -->
+</suite> <!-- Failed suite [Abdulgaffoor.Project] -->
