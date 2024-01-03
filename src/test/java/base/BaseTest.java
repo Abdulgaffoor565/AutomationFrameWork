@@ -4,9 +4,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -48,4 +52,10 @@ public class BaseTest {
 	public void tearDown() {
 		driver.close();
 	}
+	
+	public static void ScrollTillElement(WebElement iframe) {
+       Actions act= new Actions(driver);
+       act.scrollToElement(iframe).perform();
+}
+	
 }
