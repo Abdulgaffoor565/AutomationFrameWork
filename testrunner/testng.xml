@@ -4,7 +4,7 @@
   <test thread-count="5" name="Zoho">
     <classes>
       <class name="base.BaseTest"/>
-      <class name="testcase.DemoScript"/>
+      <class name="testcase.CreateAccountTC"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

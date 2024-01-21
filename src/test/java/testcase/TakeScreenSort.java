@@ -24,7 +24,5 @@ public class TakeScreenSort {
 		File f=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		
 		Files.copy(f, new File("C:\\Users\\DELL\\Downloads\\ScreenShort\\amazon.png"));
-		
 	}
-
 }
