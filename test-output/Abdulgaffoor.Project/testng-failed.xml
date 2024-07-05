@@ -3,13 +3,13 @@
 <suite name="Failed suite [Abdulgaffoor.Project]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Zoho(failed)">
     <classes>
-      <class name="testcase.DemoScript">
+      <class name="testcase.CreateAccountTC">
         <methods>
           <include name="setUp"/>
-          <include name="LoginTest" invocation-numbers="0 1 2"/>
           <include name="tearDown"/>
+          <include name="TC_CreateAccount_06" invocation-numbers="3"/>
         </methods>
-      </class> <!-- testcase.DemoScript -->
+      </class> <!-- testcase.CreateAccountTC -->
     </classes>
   </test> <!-- Zoho(failed) -->
 </suite> <!-- Failed suite [Abdulgaffoor.Project] -->

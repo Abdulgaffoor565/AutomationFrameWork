@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Login_Page {
-
+	
 	WebDriver driver;
 	
 	public Login_Page(WebDriver driver)
@@ -15,11 +15,33 @@ public class Login_Page {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css="a[class='action create primary']")
-	private WebElement Create_an_Account_Button;
+	@FindBy(css = "input[id='email']")
+	private WebElement EmailTextField;
+	@FindBy(css = "input[title='Password']")
+	private WebElement PasswordTextField;
+	@FindBy(css="button[class='action login primary']")
+	private WebElement LoginButton;
 	
-	public void Click_On_Create_an_Account_Button()
+	public void EnterEmail(String email)
 	{
-		Create_an_Account_Button.click();
+		EmailTextField.clear();
+		EmailTextField.sendKeys(email);
+	}
+	public void EnterPassword(String password)
+	{
+		PasswordTextField.clear();
+		PasswordTextField.sendKeys(password);
+	}
+	public void ClickOnLoginButton()
+	{
+		LoginButton.click();
+	}
+	public String GetPageTitle()
+	{
+		return driver.getTitle();
+	}
+	public void Click_On_Create_an_Account_Button() {
+		// TODO Auto-generated method stub
+		
 	}
 }
