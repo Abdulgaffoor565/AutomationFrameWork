@@ -6,8 +6,8 @@ import io.cucumber.testng.CucumberOptions;
 
 	
 	@CucumberOptions(
-			features="src/test/resources/Features",
-			glue="stepDefinition",
+			features="src/test/resources/Features/MenuItemMen.feature",
+			glue="stepDefinition",tags = "@smoke",
 			//dryRun = false,
 			//monochrome = true,
 			plugin = {"pretty","html:test-output.html"}

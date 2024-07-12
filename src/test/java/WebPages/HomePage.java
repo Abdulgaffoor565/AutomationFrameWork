@@ -20,6 +20,24 @@ public class HomePage {
 	private WebElement Sign_Out_Button;
 	@FindBy(xpath = "(//li[@class='authorization-link' and @data-label='or'])[1]")
 	private WebElement Sign_in_button;
+	@FindBy(xpath = "//span[normalize-space()='Men']")
+	private WebElement MenueBar_Men_Option;
+	@FindBy(xpath = "//a[@id='ui-id-17']")
+	private WebElement MenueBar_MenOption_TopOption;
+	@FindBy(xpath = "//a[@id='ui-id-19']//span[contains(text(),'Jackets')]")
+	private WebElement MenueBar_MenOption_TopOption_JacketsOptions;
+	@FindBy(xpath = "//a[@id='ui-id-20']//span[contains(text(),'Hoodies & Sweatshirts')]")
+	private WebElement MenueBar_MenOption_TopOption_HoodiesAndSweatshirtsOption;
+	@FindBy(xpath = "//a[@id='ui-id-21']//span[contains(text(),'Tees')]")
+	private WebElement MenueBar_MenOption_TopOption_TeesOption;
+	@FindBy(xpath = "//a[@id='ui-id-22']")
+	private WebElement MenueBar_MenOption_TopOption_TanksOption;
+	@FindBy(xpath = "//a[@id='ui-id-18']")
+	private WebElement MenueBar_MenOption_BottomsOption;
+	@FindBy(xpath = "//a[@id='ui-id-23']")
+	private WebElement MenueBar_MenOption_BottomsOption_PantsOption;
+	@FindBy(xpath = "//a[@id='ui-id-24']//span[contains(text(),'Shorts')]")
+	private WebElement MenueBar_MenOption_BottomsOption_ShortsOption;
 	
 	public HomePage(WebDriver driver)
 	{
@@ -91,5 +109,41 @@ public class HomePage {
 			PageFactory.initElements(driver, this);
 			return Create_an_AccountButton;
 		}	
+	}
+	public WebElement Return_MenueBar_Men_Option()
+	{
+		return MenueBar_Men_Option;
+	}
+	public WebElement Return_MenueBar_MenOption_TopOption()
+	{
+		return MenueBar_MenOption_TopOption;
+	}
+	public void ClickOn_MenueBar_MenOption_TopOption_JacketsOptions()
+	{
+		 MenueBar_MenOption_TopOption_JacketsOptions.click();
+	}
+	public void ClickOn_MenueBar_MenOption_TopOption_HoodiesAndSweatshirtsOption()
+	{
+		MenueBar_MenOption_TopOption_HoodiesAndSweatshirtsOption.click();
+	}
+	public void ClickOn_MenueBar_MenOption_TopOption_TeesOption()
+	{
+		MenueBar_MenOption_TopOption_TeesOption.click();
+	}
+	public void ClickOn_MenueBar_MenOption_TopOption_TanksOption()
+	{
+		MenueBar_MenOption_TopOption_TanksOption.click();
+	}
+	public WebElement Return_MenueBar_MenOption_BottomsOption()
+	{
+		return MenueBar_MenOption_BottomsOption;
+	}
+	public void ClickOn_MenueBar_MenOption_BottomsOption_PantsOption()
+	{
+		MenueBar_MenOption_BottomsOption_PantsOption.click();
+	}
+	public void ClickOn_MenueBar_MenOption_BottomsOption_ShortsOption()
+	{
+		MenueBar_MenOption_BottomsOption_ShortsOption.click();
 	}
 }

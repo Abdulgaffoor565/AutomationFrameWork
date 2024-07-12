@@ -4,4 +4,5 @@ Given user launch the chrome browser.
 When user open URL
 When user enter email "asasasasasasasas@gmail.com" and password as "abdul@123"
 And click on login button
-Then page title should be "[Home Page]"
+Then page title should be "Home Page"
+And close the browser

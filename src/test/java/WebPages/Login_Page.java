@@ -15,9 +15,9 @@ public class Login_Page {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(css = "input[id='email']")
+	@FindBy(xpath  = "//input[@id='email']")
 	private WebElement EmailTextField;
-	@FindBy(css = "input[title='Password']")
+	@FindBy(xpath = "//fieldset[@class='fieldset login']//input[@id='pass']")
 	private WebElement PasswordTextField;
 	@FindBy(css="button[class='action login primary']")
 	private WebElement LoginButton;
