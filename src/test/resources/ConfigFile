@@ -1,0 +1,38 @@
+BrowserName=chrome
+url=https://magento.softwaretestingboard.com/
+username=
+password=
+
+                                       HomePage
+                                       
+HomePageTitle=Home Page
+
+                                   CustomerLogin Page
+                                   
+RegisterCustomer_Heading=Registered Customers
+RegisterCustomer_InfoText=If you have an account, sign in with your email address.
+NewCustomer_Heading=New Customers
+NewCustomer_InfoText=Creating an account has many benefits: check out faster, keep more than one address, track orders and more.
+VaildEmailInvalidPasswordErrorMessage=The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.
+InvalidEmailErrorMessage=This is a required field.
+EmptyPasswordErrorMessage=This is a required field.
+
+ValidEmail=asasasasasasasas@gmail.com
+ValidPassword=abdul@123
+
+                                  Forgot Password Page
+                                  
+ForgotPageTitle=Forgot Your Password?
+InvalidEmail_Address_ErrorMessage=Please enter a valid email address (Ex: johndoe@domain.com).
+EmptyEmail_ErrorMessage=This is a required field.
+EmptyEmail_Address_ErrorMessage=This is a required field.
+
+                               CreateNewCustomerAccountPage
+                               
+CreateNewCustomerAccountPage_PageTitle=Create New Customer Account
+MainPageTitle=Create New Customer Account
+SubTitle_PersonalInformation=Personal Information
+SubTitle_SignInInformation=Sign-in Information
+PasswordStrengh=Medium
+StrongPasswordStrengh=Strong
+VeryStrongPasswordStrengh=Very Strong
