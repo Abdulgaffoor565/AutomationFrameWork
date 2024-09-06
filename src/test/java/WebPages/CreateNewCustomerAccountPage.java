@@ -8,14 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateNewCustomerAccountPage {
 	WebDriver driver;
 	@FindBy(xpath = "//input[@id='firstname']") private WebElement FirstName;
+		@FindBy(xpath = "//div[@id='firstname-error']") private WebElement FirstName_ErrorMessage_WhenEmpty;
 	@FindBy(xpath = "//input[@id='lastname']") private WebElement LastName;
+		@FindBy(xpath = "//div[@id='lastname-error']") private WebElement LastName_ErrorMessage_WhenEmpty;
 	@FindBy(xpath = "//input[@id='email_address']") private WebElement Email;
 		@FindBy(xpath = "//div[@id='email_address-error']") private WebElement InvalidEmail_ErrorMessage;
+		@FindBy(xpath = "//div[@id='email_address-error']") private WebElement Email_ErrorMessage_WhenEmpty;
 	@FindBy(xpath = "//input[@id='password']") private WebElement Password;
+		@FindBy(xpath = "//div[@id='password-error']") private WebElement PasswordErrorMessage_In_AllCondetion;
 		@FindBy(xpath = "//span[@id='password-strength-meter-label']") private WebElement Password_StatusAs_Medium;
 		@FindBy(xpath = "//span[@id='password-strength-meter-label']") private WebElement Password_StatusAs_Strong;
 		@FindBy(xpath = "//span[@id='password-strength-meter-label']") private WebElement Password_StatusAs_VeryStrong;
 	@FindBy(xpath = "//input[@id='password-confirmation']") private WebElement ComfirmPassword;
+	@FindBy(xpath = "//div[@id='password-confirmation-error']") private WebElement ComfirmPassword_ErrorMessage_In_Allcondition;
 	@FindBy(xpath = "//button[@title='Create an Account']//span[contains(text(),'Create an Account')]") private WebElement CreateAnAccount_button;
 	
 	@FindBy(xpath = "//span[@class='base']") private WebElement MainPageTitle;
@@ -28,27 +33,47 @@ public class CreateNewCustomerAccountPage {
 		PageFactory.initElements(driver, this);}
 	
 	public boolean FirstNameTextBox_IsDisplayed()
-		{return FirstName.isDisplayed();}
+	{return FirstName.isDisplayed();}
+		public void Enter_FirstName_InFirstNameTextBox(String FN)
+		{FirstName.sendKeys(FN);}
+	public String ReturnFirstNameTextBox_ErrorMessage_WhenItIsEmpty()
+	{return FirstName_ErrorMessage_WhenEmpty.getText();}
+
 	public boolean LastNameTextBox_IsDisplayed()
-		{return LastName.isDisplayed();}
+	{return LastName.isDisplayed();}
+		public void Enter_LastName_InLastNametextBox(String LN)
+		{ LastName.sendKeys(LN);}
+	public String ReturnLastNameTextBox_ErrorMessage_WhenItIsEmpty()
+	{return LastName_ErrorMessage_WhenEmpty.getText();}
+	
 	public boolean EmailTextBox_IsDisplayed()
 	{return Email.isDisplayed();}
 		public void EnterEmail_In_EmailTextBox(String email)
 		{ Email.sendKeys(email);}
 		public WebElement Return_InvalidEmail_ErrorMessage_Element()
 		{ return InvalidEmail_ErrorMessage;}
+	public String Return_Email_ErrorMessage_WhenEmpty()
+	{ return Email_ErrorMessage_WhenEmpty.getText();}
+		
 	public boolean PasswordTextBox_IsDisplayed()
 	{return Password.isDisplayed();}
 		public void EnterPassword_In_PasswordTextBox(String pwd)
-		{ Password.sendKeys(pwd);}
+			{ Password.sendKeys(pwd);}
+		public String GetText_Password_ErrorMessage_WhenEmpty()
+		{ return PasswordErrorMessage_In_AllCondetion.getText();}
 		public String GetText_Password_StatusAs_Medium()
-		{ return Password_StatusAs_Medium.getText();}
+			{ return Password_StatusAs_Medium.getText();}
 		public String GetText_Password_StatusAs_Strong()
-		{ return Password_StatusAs_Strong.getText();}
+			{ return Password_StatusAs_Strong.getText();}
 		public String GetText_Password_StatusAs_VeryStrong()
-		{ return Password_StatusAs_VeryStrong.getText();}
+			{ return Password_StatusAs_VeryStrong.getText();}
+		
 	public boolean ComfirmPasswordTextBox_IsDisplayed()
 		{return ComfirmPassword.isDisplayed();}
+	public void Enter_Password_InComfirmPasswordTextBox(String pwd)
+	{ ComfirmPassword.sendKeys(pwd);}
+	public String GetText_ConfirmPassword_ErrorMesaage_WhenEmpty()
+	{return ComfirmPassword_ErrorMessage_In_Allcondition.getText();}
 	public boolean CreateAnAccount_button_IsDisplayed()
 	{return CreateAnAccount_button.isDisplayed();}
 		public void ClickOn_CreateAnAccount_button()

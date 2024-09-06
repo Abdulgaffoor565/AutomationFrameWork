@@ -33,6 +33,15 @@ CreateNewCustomerAccountPage_PageTitle=Create New Customer Account
 MainPageTitle=Create New Customer Account
 SubTitle_PersonalInformation=Personal Information
 SubTitle_SignInInformation=Sign-in Information
+
 PasswordStrengh=Medium
 StrongPasswordStrengh=Strong
 VeryStrongPasswordStrengh=Very Strong
+
+Vaild_FirstName=Abdul
+ErrorMessage_WhenEmpty=This is a required field.
+
+Valid_LastName=Gaffur
+Valid_Email=AbdulGaffur@gmail.com
+Valid_Password=Fg8!Hi3#J1Kl
+Valid_ComPwd=Fg8!Hi3#J1Kl

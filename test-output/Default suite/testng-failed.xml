@@ -5,9 +5,9 @@
     <classes>
       <class name="TestCases.CreateNewCustomerAccountTestCases">
         <methods>
-          <include name="Setup"/>
+          <include name="AccountCreation_TC_048_EmailErrorMessage_While_Empty"/>
           <include name="tearDown"/>
-          <include name="AccountCreation_TC_016_PasswordTextBox_ValidationFor_MediumStaus"/>
+          <include name="Setup"/>
         </methods>
       </class> <!-- TestCases.CreateNewCustomerAccountTestCases -->
     </classes>

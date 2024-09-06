@@ -121,4 +121,70 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
     public Object[][] VeryStrongPasswordStatus() throws Exception{
         return new ExcelLibrary().getData("Very Strong pwd");
     }
+	
+	@Test(priority = 10)
+	public void AccountCreation_TC_046_FirstNameErrorMessage_While_Empty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Valid_LastName"));
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(prop.getProperty("Valid_Email"));
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
+		CreateNewCustomerAccountPage.Enter_Password_InComfirmPasswordTextBox(prop.getProperty("Valid_ComPwd"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.ReturnFirstNameTextBox_ErrorMessage_WhenItIsEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+	}
+	@Test(priority = 11)
+	public void AccountCreation_TC_047_LastNameErrorMessage_While_Empty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Vaild_FirstName"));
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(prop.getProperty("Valid_Email"));
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
+		CreateNewCustomerAccountPage.Enter_Password_InComfirmPasswordTextBox(prop.getProperty("Valid_ComPwd"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.ReturnLastNameTextBox_ErrorMessage_WhenItIsEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+	}
+	@Test(priority = 12)
+	public void AccountCreation_TC_048_EmailErrorMessage_While_Empty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Vaild_FirstName"));
+		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Valid_LastName"));
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
+		CreateNewCustomerAccountPage.Enter_Password_InComfirmPasswordTextBox(prop.getProperty("Valid_ComPwd"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.Return_Email_ErrorMessage_WhenEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+		}
+	@Test(priority = 13)
+	public void AccountCreation_TC_049_PasswordErrorMessage_While_Empty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Vaild_FirstName"));
+		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Valid_LastName"));
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(prop.getProperty("Valid_Email"));
+		CreateNewCustomerAccountPage.Enter_Password_InComfirmPasswordTextBox(prop.getProperty("Valid_ComPwd"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_Password_ErrorMessage_WhenEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+	}
+	@Test(priority = 14)
+	public void AccountCreation_TC_050_ConfirmPassword_ErrorMessage_While_Empty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Vaild_FirstName"));
+		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Valid_LastName"));
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(prop.getProperty("Valid_Email"));
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_ConfirmPassword_ErrorMesaage_WhenEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+	}
 }
