@@ -121,4 +121,32 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
     public Object[][] VeryStrongPasswordStatus() throws Exception{
         return new ExcelLibrary().getData("Very Strong pwd");
     }
+	
+	@Test(priority = 10)
+	public void AccountCreation_TC_046_First_Name_ErrorMessage_Verification_WhenEmpty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_LastNameTextBox("Gaffur");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox("AbdulGaffur@gmail.com");
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.Return_FirstName_ErrorMessage(), prop.getProperty("FirstName_ErrorMEssage"));
+	}
+	
+	@Test(priority = 11)
+	public void AccountCreation_TC_047_Last_Name_ErrorMessage_Verification_WhenEmpty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox("AbdulGaffur@gmail.com");
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.Return_LastName_ErrorMessage(), prop.getProperty("LastName_ErrorMEssage"));
+	}
 }

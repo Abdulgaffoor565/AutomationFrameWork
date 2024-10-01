@@ -8,7 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 public class CreateNewCustomerAccountPage {
 	WebDriver driver;
 	@FindBy(xpath = "//input[@id='firstname']") private WebElement FirstName;
+	@FindBy(xpath = "//div[@id='firstname-error']") private WebElement FirstName_Error_message;
 	@FindBy(xpath = "//input[@id='lastname']") private WebElement LastName;
+	@FindBy(xpath = "//div[@id='lastname-error']") private WebElement LastName_Error_message;
 	@FindBy(xpath = "//input[@id='email_address']") private WebElement Email;
 		@FindBy(xpath = "//div[@id='email_address-error']") private WebElement InvalidEmail_ErrorMessage;
 	@FindBy(xpath = "//input[@id='password']") private WebElement Password;
@@ -29,8 +31,16 @@ public class CreateNewCustomerAccountPage {
 	
 	public boolean FirstNameTextBox_IsDisplayed()
 		{return FirstName.isDisplayed();}
+	public void Enter_FirstNameTextBox(String text)
+		{ FirstName.sendKeys(text); }
+	public String Return_FirstName_ErrorMessage()
+		{return FirstName_Error_message.getText(); }
 	public boolean LastNameTextBox_IsDisplayed()
 		{return LastName.isDisplayed();}
+	public void Enter_LastNameTextBox(String text)
+		{ LastName.sendKeys(text); }
+	public String Return_LastName_ErrorMessage()
+		{return LastName_Error_message.getText(); }
 	public boolean EmailTextBox_IsDisplayed()
 	{return Email.isDisplayed();}
 		public void EnterEmail_In_EmailTextBox(String email)
@@ -49,6 +59,8 @@ public class CreateNewCustomerAccountPage {
 		{ return Password_StatusAs_VeryStrong.getText();}
 	public boolean ComfirmPasswordTextBox_IsDisplayed()
 		{return ComfirmPassword.isDisplayed();}
+	public void Enter_ComfirmPasswordTxtBox(String pwd)
+		{ ComfirmPassword.sendKeys(pwd); }
 	public boolean CreateAnAccount_button_IsDisplayed()
 	{return CreateAnAccount_button.isDisplayed();}
 		public void ClickOn_CreateAnAccount_button()
