@@ -47,6 +47,8 @@ public class CreateNewCustomerAccountPage {
 		{ Email.sendKeys(email);}
 		public WebElement Return_InvalidEmail_ErrorMessage_Element()
 		{ return InvalidEmail_ErrorMessage;}
+		public String Return_InvalidEmail_ErrorMessage()
+		{ return InvalidEmail_ErrorMessage.getText();}
 	public boolean PasswordTextBox_IsDisplayed()
 	{return Password.isDisplayed();}
 		public void EnterPassword_In_PasswordTextBox(String pwd)

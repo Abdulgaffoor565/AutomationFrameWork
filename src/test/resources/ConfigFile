@@ -35,6 +35,7 @@ SubTitle_PersonalInformation=Personal Information
 SubTitle_SignInInformation=Sign-in Information
 FirstName_ErrorMEssage=This is a required field.
 LastName_ErrorMEssage=This is a required field.
+Empty_EmailErrorMessage=This is a required field.
 PasswordStrengh=Medium
 StrongPasswordStrengh=Strong
 VeryStrongPasswordStrengh=Very Strong
