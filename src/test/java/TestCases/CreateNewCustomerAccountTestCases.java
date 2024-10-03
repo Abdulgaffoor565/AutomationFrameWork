@@ -163,5 +163,18 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
 		Assert.assertEquals(CreateNewCustomerAccountPage.Return_InvalidEmail_ErrorMessage(), prop.getProperty("Empty_EmailErrorMessage"));
 	}
-
+	
+	@Test(priority = 12)
+	public void AccountCreation_TC_049_Password_ErrorMessage_Verification_WhenEmpty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.Enter_LastNameTextBox("Gaffur");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox("AbdulGaffur@gmail.com");
+		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_Password_ErrorMessage_WhenEmpty(), prop.getProperty("Empty_PasswordErorr_Message"));
+	}
 }
