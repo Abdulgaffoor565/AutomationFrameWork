@@ -164,7 +164,7 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		Assert.assertEquals(CreateNewCustomerAccountPage.Return_InvalidEmail_ErrorMessage(), prop.getProperty("Empty_EmailErrorMessage"));
 	}
 	
-	@Test(priority = 12)
+	@Test(priority = 13)
 	public void AccountCreation_TC_049_Password_ErrorMessage_Verification_WhenEmpty() throws Exception
 	{
 		HomePage HomePage=new HomePage(driver);
@@ -176,5 +176,19 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
 		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
 		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_Password_ErrorMessage_WhenEmpty(), prop.getProperty("Empty_PasswordErorr_Message"));
+	}
+	
+	@Test(priority = 14)
+	public void AccountCreation_TC_50_ComfirmPassword_ErrorMessage_Verification_WhenEmpty() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.Enter_LastNameTextBox("Gaffur");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox("AbdulGaffur@gmail.com");
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.Get_ComfirmPassword_AllErrorMessage(), prop.getProperty("ComfirmPassword_ErrorMessage_WhenEmpty"));
 	}
 }

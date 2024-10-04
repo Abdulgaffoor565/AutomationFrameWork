@@ -37,6 +37,7 @@ FirstName_ErrorMEssage=This is a required field.
 LastName_ErrorMEssage=This is a required field.
 Empty_EmailErrorMessage=This is a required field.
 Empty_PasswordErorr_Message=This is a required field.
+ComfirmPassword_ErrorMessage_WhenEmpty=This is a required field.
 PasswordStrengh=Medium
 StrongPasswordStrengh=Strong
 VeryStrongPasswordStrengh=Very Strong

@@ -19,6 +19,7 @@ public class CreateNewCustomerAccountPage {
 		@FindBy(xpath = "//span[@id='password-strength-meter-label']") private WebElement Password_StatusAs_VeryStrong;
 		@FindBy(xpath = "//div[@id='password-error']") private WebElement Password_ErrorMessage_WhenEmpty;
 	@FindBy(xpath = "//input[@id='password-confirmation']") private WebElement ComfirmPassword;
+	@FindBy(xpath = "//div[@id='password-confirmation-error']") private WebElement ComfirmPassword_AllErrorMessage;
 	@FindBy(xpath = "//button[@title='Create an Account']//span[contains(text(),'Create an Account')]") private WebElement CreateAnAccount_button;
 	
 	@FindBy(xpath = "//span[@class='base']") private WebElement MainPageTitle;
@@ -66,6 +67,8 @@ public class CreateNewCustomerAccountPage {
 		{return ComfirmPassword.isDisplayed();}
 	public void Enter_ComfirmPasswordTxtBox(String pwd)
 		{ ComfirmPassword.sendKeys(pwd); }
+	public String Get_ComfirmPassword_AllErrorMessage()
+		{return ComfirmPassword_AllErrorMessage.getText();}
 	public boolean CreateAnAccount_button_IsDisplayed()
 	{return CreateAnAccount_button.isDisplayed();}
 		public void ClickOn_CreateAnAccount_button()
