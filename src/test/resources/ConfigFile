@@ -6,6 +6,8 @@ password=
                                        HomePage
                                        
 HomePageTitle=Home Page
+HomePageTitleAfterAccountCreation=My Account
+AccountCreation_ComfirmationMessage=Thank you for registering with Main Website Store.
 
                                    CustomerLogin Page
                                    

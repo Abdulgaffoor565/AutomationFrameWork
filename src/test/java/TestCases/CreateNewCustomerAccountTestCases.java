@@ -10,6 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import Base.BaseClass;
+import Utilities.EmailGenerator;
 import Utilities.ExcelLibrary;
 import WebPages.CreateNewCustomerAccountPage;
 import WebPages.HomePage;
@@ -190,5 +191,23 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
 		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
 		Assert.assertEquals(CreateNewCustomerAccountPage.Get_ComfirmPassword_AllErrorMessage(), prop.getProperty("ComfirmPassword_ErrorMessage_WhenEmpty"));
+	}
+	
+	@Test(priority = 15)
+	public void AccountCreation_TC_51_Create_an_account()
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		EmailGenerator RandomEmail=new EmailGenerator();
+		CreateNewCustomerAccountPage.Enter_FirstNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.Enter_LastNameTextBox("Gaffur");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(RandomEmail.generateRandomEmail());
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(HomePage.Get_Title_Of_Page(), prop.getProperty("HomePageTitleAfterAccountCreation"));
+		Assert.assertEquals(HomePage.Get_CustomerName(), "Welcome, Abdul Gaffur!");
+		Assert.assertEquals(HomePage.Get_NewAccountCreation_ConfirmationMessage(), prop.getProperty("AccountCreation_ComfirmationMessage"));
 	}
 }

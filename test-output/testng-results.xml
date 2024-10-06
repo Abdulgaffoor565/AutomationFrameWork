@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-04T20:03:41 IST" name="Default suite" finished-at="2024-10-04T20:03:54 IST" duration-ms="13134">
+  <suite started-at="2024-10-06T18:54:22 IST" name="Default suite" finished-at="2024-10-06T18:54:35 IST" duration-ms="13433">
     <groups>
     </groups>
-    <test started-at="2024-10-04T20:03:41 IST" name="Default test" finished-at="2024-10-04T20:03:54 IST" duration-ms="13134">
+    <test started-at="2024-10-06T18:54:22 IST" name="Default test" finished-at="2024-10-06T18:54:35 IST" duration-ms="13433">
       <class name="TestCases.CreateNewCustomerAccountTestCases">
-        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.CreateNewCustomerAccountTestCases@78461bc4]" started-at="2024-10-04T20:03:41 IST" name="Setup" finished-at="2024-10-04T20:03:51 IST" duration-ms="9456" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:TestCases.CreateNewCustomerAccountTestCases@544630b7]" started-at="2024-10-06T18:54:22 IST" name="Setup" finished-at="2024-10-06T18:54:28 IST" duration-ms="5809" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="AccountCreation_TC_50_ComfirmPassword_ErrorMessage_Verification_WhenEmpty()[pri:14, instance:TestCases.CreateNewCustomerAccountTestCases@78461bc4]" started-at="2024-10-04T20:03:51 IST" name="AccountCreation_TC_50_ComfirmPassword_ErrorMessage_Verification_WhenEmpty" finished-at="2024-10-04T20:03:54 IST" duration-ms="3312" status="PASS">
+        <test-method signature="AccountCreation_TC_51_Create_an_account()[pri:15, instance:TestCases.CreateNewCustomerAccountTestCases@544630b7]" started-at="2024-10-06T18:54:28 IST" name="AccountCreation_TC_51_Create_an_account" finished-at="2024-10-06T18:54:35 IST" duration-ms="7232" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AccountCreation_TC_50_ComfirmPassword_ErrorMessage_Verification_WhenEmpty -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.CreateNewCustomerAccountTestCases@78461bc4]" started-at="2024-10-04T20:03:54 IST" name="tearDown" finished-at="2024-10-04T20:03:54 IST" duration-ms="272" status="PASS">
+        </test-method> <!-- AccountCreation_TC_51_Create_an_account -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:TestCases.CreateNewCustomerAccountTestCases@544630b7]" started-at="2024-10-06T18:54:35 IST" name="tearDown" finished-at="2024-10-06T18:54:35 IST" duration-ms="295" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
