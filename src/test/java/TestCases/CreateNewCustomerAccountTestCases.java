@@ -2,6 +2,7 @@ package TestCases;
 
 import java.io.IOException;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -209,5 +210,32 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		Assert.assertEquals(HomePage.Get_Title_Of_Page(), prop.getProperty("HomePageTitleAfterAccountCreation"));
 		Assert.assertEquals(HomePage.Get_CustomerName(), "Welcome, Abdul Gaffur!");
 		Assert.assertEquals(HomePage.Get_NewAccountCreation_ConfirmationMessage(), prop.getProperty("AccountCreation_ComfirmationMessage"));
+	}
+	
+	@Test(priority = 16)
+	public void AccountCreation_TC_52_Create_an_accountWith_SameFirst_And_LastName() throws InterruptedException
+	{
+		HomePage HomePage=new HomePage(driver);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		EmailGenerator RandomEmail=new EmailGenerator();
+		CreateNewCustomerAccountPage.Enter_FirstNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.Enter_LastNameTextBox("Abdul");
+		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(RandomEmail.generateRandomEmail());
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.Enter_ComfirmPasswordTxtBox("Fg8!Hi3#J1Kl");
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Thread.sleep(3000);
+		wait.until(ExpectedConditions.visibilityOf(HomePage.GetElement_CustomerName()));
+		Assert.assertEquals(HomePage.Get_Title_Of_Page(), prop.getProperty("HomePageTitleAfterAccountCreation"));
+		Assert.assertEquals(HomePage.Get_CustomerName(), "Welcome, Abdul Abdul!");
+		Assert.assertEquals(HomePage.Get_NewAccountCreation_ConfirmationMessage(), prop.getProperty("AccountCreation_ComfirmationMessage"));
+	}
+	
+	@Test(priority = 17)
+	public void AccountCreation_TC_52_Create_an_accountWith_SameFirst_And_LastName() throws InterruptedException
+	{
+	}
 	}
 }

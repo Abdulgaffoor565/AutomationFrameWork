@@ -5,9 +5,9 @@
     <classes>
       <class name="TestCases.CreateNewCustomerAccountTestCases">
         <methods>
-          <include name="tearDown"/>
           <include name="Setup"/>
-          <include name="AccountCreation_TC_51_Create_an_account"/>
+          <include name="tearDown"/>
+          <include name="AccountCreation_TC_52_Create_an_accountWith_SameFirst_And_LastName"/>
         </methods>
       </class> <!-- TestCases.CreateNewCustomerAccountTestCases -->
     </classes>
