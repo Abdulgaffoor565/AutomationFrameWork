@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="TestCases.CreateNewCustomerAccountTestCases">
+      <class name="Base.PracticeBaseClass">
         <methods>
-          <include name="AccountCreation_TC_048_EmailErrorMessage_While_Empty"/>
-          <include name="tearDown"/>
-          <include name="Setup"/>
+          <include name="testCreateUser"/>
         </methods>
-      </class> <!-- TestCases.CreateNewCustomerAccountTestCases -->
+      </class> <!-- Base.PracticeBaseClass -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CreateNewCustomerAccountPage {
 	WebDriver driver;
+	
+	//Web Elements
+	
 	@FindBy(xpath = "//input[@id='firstname']") private WebElement FirstName;
 		@FindBy(xpath = "//div[@id='firstname-error']") private WebElement FirstName_ErrorMessage_WhenEmpty;
 	@FindBy(xpath = "//input[@id='lastname']") private WebElement LastName;

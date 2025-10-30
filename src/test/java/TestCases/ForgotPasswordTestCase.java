@@ -23,6 +23,8 @@ public class ForgotPasswordTestCase extends BaseClass{
 	ForgotPasswordTestCase() throws IOException
 	{super();};
 
+	//Test cases
+	
     @Test(priority = 1)
 	public void ForgotPwd_TC_001_ForgetPasswordPageNavigation()
 	{

@@ -10,6 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 public class CustomerLoginPage {
 
 	WebDriver driver;
+	
+	// Web Elements
+	
 	@FindBy(xpath = "//input[@id='email']") private WebElement Email_TextField;
 	@FindBy(xpath = "//fieldset[@class='fieldset login']//input[@id='pass']") private WebElement Password_TextField;
 	@FindBy(xpath = "//fieldset[@class='fieldset login']//span[contains(text(),'Sign In')]") private WebElement SignIn_Button;

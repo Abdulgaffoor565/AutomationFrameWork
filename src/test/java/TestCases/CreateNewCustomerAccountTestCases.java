@@ -20,6 +20,8 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		super();
 	}
 	
+	//Test cases
+	
 	@Test(priority = 1)
 	public void AccountCreation_TC_001_AllTheTextBox_Verification()
 	{
@@ -183,6 +185,19 @@ public class CreateNewCustomerAccountTestCases extends BaseClass{
 		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Vaild_FirstName"));
 		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Valid_LastName"));
 		CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox(prop.getProperty("Valid_Email"));
+		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
+		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
+		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_ConfirmPassword_ErrorMesaage_WhenEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));
+	}
+	@Test(priority = 15)
+	public void AccountCreation_TC_051_Create_Account_With_AllValid_Data() throws Exception
+	{
+		HomePage HomePage=new HomePage(driver);
+		HomePage.ClickOn_CreateAnAccount_TextLink();
+		CreateNewCustomerAccountPage CreateNewCustomerAccountPage=new WebPages.CreateNewCustomerAccountPage(driver);
+		CreateNewCustomerAccountPage.Enter_FirstName_InFirstNameTextBox(prop.getProperty("Abdul"));
+		CreateNewCustomerAccountPage.Enter_LastName_InLastNametextBox(prop.getProperty("Gaffur"));
+		//CreateNewCustomerAccountPage.EnterEmail_In_EmailTextBox("");
 		CreateNewCustomerAccountPage.EnterPassword_In_PasswordTextBox(prop.getProperty("Valid_Password"));
 		CreateNewCustomerAccountPage.ClickOn_CreateAnAccount_button();
 		Assert.assertEquals(CreateNewCustomerAccountPage.GetText_ConfirmPassword_ErrorMesaage_WhenEmpty(), prop.getProperty("ErrorMessage_WhenEmpty"));

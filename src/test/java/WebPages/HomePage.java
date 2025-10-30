@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
 	WebDriver driver;
+	
+	//Web Elements
+	
 	@FindBy(xpath = "//div[@class='panel header']//a[contains(text(),'Sign In')]") private WebElement Sign_In_TextLink;
 	@FindBy(xpath = "//div[@data-bind='html: $parent.prepareMessageForHtml(message.text)']") private WebElement ConfirmationMessage_OfValidForgotPwd;
 	@FindBy(xpath = "//div[@class='panel header']//a[normalize-space()='Create an Account']") private WebElement CreateAnAccount_TextLink;

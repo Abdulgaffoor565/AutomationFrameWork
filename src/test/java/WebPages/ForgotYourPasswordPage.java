@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 public class ForgotYourPasswordPage {
 	WebDriver driver;
 	
+	//Web Elements
+	
 	@FindBy(xpath = "//input[@id='email_address']") private WebElement EmailTextFiled;
 	@FindBy(xpath = "//span[normalize-space()='Reset My Password']") private WebElement ResetMyPassword_Button;
 	@FindBy(xpath = "//div[@id='email_address-error']") private WebElement InvalidEmail_Address_ErrorMessage;

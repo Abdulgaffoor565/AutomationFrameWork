@@ -23,6 +23,7 @@ public class BaseClass {
 	public static Properties prop=new Properties();
 	public static FileReader fr;
 	
+	//Excel file
 	XSSFWorkbook wb;
 	XSSFSheet sheet;
 	
@@ -63,8 +64,7 @@ public class BaseClass {
 
 	public String ReadData(String sheetName, int row, int col)
 	{
-		sheet=wb.getSheet(sheetName);
-		String data = sheet.getRow(row).getCell(col).getStringCellValue();
+		String data = wb.getSheet(sheetName).getRow(row).getCell(col).getStringCellValue();
 		return data;
 	}
 	
