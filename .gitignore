@@ -1,1 +1,34 @@
-/target/
+# === Maven Build Outputs ===
+target/
+*.jar
+*.war
+*.ear
+
+# === TestNG Execution Outputs & Reports ===
+test-output/
+surefire-reports/
+*.dump
+*.dumpstream
+*.log
+
+# === Eclipse IDE Specific Files ===
+.metadata/
+.classpath
+.project
+.settings/
+*.launch
+bin/
+
+# === IntelliJ IDEA Specific Files ===
+.idea/
+*.iml
+*.iws
+
+# === ExtentReports / Custom HTML Outputs ===
+# Uncomment the line below if you want to block reports from going to GitHub
+# extent-reports/
+# *.html
+
+# === Operating System Backups ===
+.DS_Store
+Thumbs.db
